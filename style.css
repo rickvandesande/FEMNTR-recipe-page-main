@@ -1,0 +1,190 @@
+/* -- CSS RESET -- */
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+/* -- END CSS RESET -- */
+
+/* -- VARIABLES -- */
+:root {
+
+    /* COLORS */
+--primary-bg-300: hsl(29, 53%, 90%);
+--accent-bg-100: hsl(330, 100%, 98%);
+--primary-fg-900: hsl(24, 5%, 18%);
+--primary-fg-600: hsl(30, 10%, 34%);
+--accent-fg-800: hsl(14, 45%, 36%);
+--accent-fg-700: hsl(332, 51%, 32%);
+--accent-fg-150: hsl(30, 18%, 87%);
+
+--white: hsl(0, 0%, 100%);
+    /* SPACING  */
+ --spacing-900: 40px;
+ --spacing-800: 32px;
+ --spacing-750: 30px;
+ --spacing-700: 28px;
+ --spacing-600: 24px;
+ --spacing-400: 16px;
+    /* END SPACING */
+ }
+/* -- END VARIABLES -- */
+body {
+    background-color: var(--primary-bg-300);
+    font-family: "Outfit", sans-serif;
+    font-weight: 400;
+    color: var(--primary-fg-600);
+    @media (width > 768px) {
+        display: flex;
+        justify-content: center;
+    }
+}
+article {
+    max-width: 768px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-800);
+    padding-block-start: 0px;
+    padding-block-end: var(--spacing-900);
+    @media (width > 768px) {
+        gap: var(--spacing-900);
+        margin-block-start: 5rem;
+        border-radius: 20px;
+        padding-block-start: var(--spacing-900);
+        
+    }
+}
+section,
+.header-text {
+    margin-inline: var(--spacing-800);
+    @media (width > 768px) {
+        margin-inline: var(--spacing-900);
+    }
+}
+.header-img {
+    @media (width > 768px) {
+        border-radius: 10px;
+        overflow: hidden;
+        margin-inline: var(--spacing-900);
+    }
+}
+
+h1 {
+    color: var(--primary-fg-900);
+    margin-block-start: var(--spacing-900);
+    margin-block-end: var(--spacing-800);
+    font-size: 2.2rem;
+    line-height: 1.1;
+}
+
+h1,
+h2 {
+    font-family: "Young serif", serif;
+}
+h2 {
+    color: var(--accent-fg-800);
+    margin-bottom: var(--spacing-400);
+}
+p {
+    font-size: 1rem;
+}
+ul {
+    padding-inline: var(--spacing-400);
+}
+li {
+     padding-inline-start: var(--spacing-400);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom: 1px solid var(--accent-fg-150);
+}
+th {
+    font-weight: 400;
+    text-align: start;
+    padding-inline-start: var(--spacing-600);
+}
+td {
+    font-weight: 600;
+    color: var(--accent-fg-800);
+}
+th,td {
+    padding-block: var(--spacing-400);
+}
+
+::marker {
+    color: var(--accent-fg-800);
+    font-size: 0.75rem;
+}
+.highlight {
+    background-color: var(--accent-bg-100);
+    border-radius: 10px;
+    padding: var(--spacing-600);
+}
+.highlight h2 {
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    color: var(--accent-fg-700);
+    font-size: 1.4rem;
+}
+.highlight ::marker {
+    color: var(--accent-fg-700);
+
+}
+.instructions {
+    padding-block: var(--spacing-600);
+    border-block: 1px solid var(--accent-fg-150);
+}
